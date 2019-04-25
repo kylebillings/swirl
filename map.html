@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>On Wine – Interactive Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,600,700|Frank+Ruhl+Libre:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css" rel="stylesheet">
+<style>
+#map { display: inline-block; height: 100vh; width: 100%;}
+</style>
+ 
+<div id="map"></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3R5bGViaWxsaW5ncyIsImEiOiJjanE1aGc1dzQyNG95NDNwZDRjYnRxenN0In0.QIH5RYm5XBXkBF0_IxrMJg';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/stylebillings/cju15q1em12271fqmrkhdzw8i',
+center: [10.692082, 44.601905],
+zoom: 7.0
+});
+map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.FullscreenControl());
+
+map.on('load', function () { 
+
+map.on('click', 'Wine_Regions', function (e) {
+
+// label logic
+
+if (e.features[0].properties.reg2 !== undefined) {
+            if (e.features[0].properties.reg3 !== undefined) {
+                var label = e.features[0].properties.reg + " • " + e.features[0].properties.reg2
+                var region = e.features[0].properties.reg3
+            } else {
+                var label = e.features[0].properties.country + " • " + e.features[0].properties.reg
+                var region = e.features[0].properties.reg2;
+            }            
+        } else {
+            var label = e.features[0].properties.country
+            var region = e.features[0].properties.reg;
+        };
+
+// classification
+
+if (e.features[0].properties.class !== undefined) {
+var classification = e.features[0].properties.class
+} else {
+var classification = ""
+};
+
+// description
+
+if (e.features[0].properties.description !== undefined)
+{
+var description = e.features[0].properties.description 
+} else {
+var description = " "
+};
+
+// grapes
+
+var grapes = e.features[0].properties.grp1
+
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<div class='map-popup-card'><p class='popup-card-label'>" + label + "</p>" + "<h4 class='popup-card-title'>" + region + "</h4>" + "<p class='popup-card-classification'>" + classification + "</p>" + "<p class='popup-card-description'>" + description + "</p></div>")
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when the mouse is over the places layer.
+
+map.on('mouseenter', 'Wine_Regions_2', function () {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+
+map.on('mouseleave', 'Wine_Regions_2', function () {
+map.getCanvas().style.cursor = '';
+});
+});
+</script>
+<div style="position: absolute; z-index: 500; top: 2rem; left: 2rem;">
+<a href="index.html">
+<img src="https://biarritz.io/wp-content/uploads/2019/02/bwa_logo-sq@2x.png" alt="website logo" width="65" height="65" scale="2" style="width: 44px; outline: none;">
+</a>
+</div>
+</body>
+</html>
