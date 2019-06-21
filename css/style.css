@@ -371,7 +371,7 @@ textarea {
 }
 
 a {
-	color: rgb(237, 85, 101);
+	color: #7F0FFF;
 	text-decoration: none
 }
 
@@ -1233,35 +1233,39 @@ label {
 }
 
 .button-primary {
-	background: #d62839; /* Old browsers */
-	background: -moz-linear-gradient(45deg, #d62839 0%, #ed5565 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(45deg, #d62839 0%,#ed5565 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(45deg, #d62839 0%,#ed5565 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62839', endColorstr='#ed5565',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a04cff+0,ff98ef+100 */
+background: #a04cff; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #a04cff 0%, #ff98ef 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #a04cff 0%,#ff98ef 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #a04cff 0%,#ff98ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a04cff', endColorstr='#ff98ef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+ /* IE6-9 fallback on horizontal gradient */
 }
 
 .button-primary:hover {
-	background: #d62839; /* Old browsers */
-background: -moz-linear-gradient(45deg, #d62839 63%, #ed5565 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #d62839 63%,#ed5565 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #d62839 63%,#ed5565 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62839', endColorstr='#ed5565',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a04cff+0,ff98ef+100 */
+background: #a04cff; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #a04cff 40%, #ff98ef 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #a04cff 40%,#ff98ef 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #a04cff 40%,#ff98ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a04cff', endColorstr='#ff98ef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+/* IE6-9 fallback on horizontal gradient */
 }
 
 .button-primary.button-shadow::before {
-	box-shadow: 0 8px 16px rgba(214, 40, 57, 0.25)
+	box-shadow: 0 8px 16px rgba(160, 76, 255, 0.25)
 }
 
 .button-primary.button-shadow:hover::before {
-	box-shadow: 0 8px 16px rgba(214, 40, 57, 0.4)
+	box-shadow: 0 8px 16px rgba(160, 76, 255, 0.4)
 }
 
 .button-primary .button-sm.button-shadow::before {
-	box-shadow: 0 4px 16px rgba(214, 40, 57, 0.25)
+	box-shadow: 0 4px 16px rgba(160, 76, 255, 0.25)
 }
 
 .button-primary .button-sm.button-shadow:hover::before {
-	box-shadow: 0 4px 16px rgba(214, 40, 57, 0.4)
+	box-shadow: 0 4px 16px rgba(160, 76, 255, 0.4)
 }
 
 .button-block {
@@ -1686,7 +1690,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62839', end
 }
 
 .testimonial-header img {
-	width: 56px;
+	width: 88px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
