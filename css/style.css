@@ -1512,7 +1512,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a04cff', end
 @media (min-width: 1025px) {
 	.hero-copy {
 		padding-right: 88px;
-		min-width: 552px
+		min-width: 512px
 	}
 }
 
